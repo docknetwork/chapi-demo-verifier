@@ -12,6 +12,9 @@
 
   <!--Credential Handler API Polyfill-->
   <script src="https://unpkg.com/credential-handler-polyfill@2.1.1/dist/credential-handler-polyfill.min.js"></script>
+
+  <!--VC utils-->
+  <script src="./vc-js.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -83,6 +86,8 @@
       document.getElementById('getResults').innerText = JSON.stringify(result, null, 2);
 
       console.log('Result of get() request:', JSON.stringify(result, null, 2));
+      const verificationResult = await VC.verifyCredential(result.data.verifiableCredential);
+      console.log('Verification result:', JSON.stringify(verificationResult, null, 2));
   }
 
   function ready(fn) {
