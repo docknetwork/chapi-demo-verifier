@@ -83,6 +83,24 @@
       document.getElementById('getResults').innerText = JSON.stringify(result, null, 2);
 
       console.log('Result of get() request:', JSON.stringify(result, null, 2));
+
+      // // // // // // // // // // // //
+      // TODO: run verification on result.data.verifiableCredential);
+    let payload = {
+      "verifiableCredential": result.data.verifiableCredential,
+      "options": {
+        "checks": [
+          "proof"
+        ]
+      }
+    }
+    // curl -X POST "http://44ebe9ba9231.ngrok.io/verifier/credentials" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"verifiableCredential\": { \"@context\": [ \"https://www.w3.org/2018/credentials/v1\", \"https://www.w3.org/2018/credentials/examples/v1\" ], \"id\": \"http://example.edu/credentials/3732\", \"type\": [ \"VerifiableCredential\", \"UniversityDegreeCredential\" ], \"issuer\": \"did:example:c6f1c276e12ec21ebfeb1f712eb\", \"issuanceDate\": \"2020-03-11\", \"credentialSubject\": { \"id\": \"did:example:ebfeb1f712ebc6f1c276e12ec21\", \"degree\": { \"type\": \"BachelorDegree\", \"name\": \"Bachelor of Science and Arts\" } }, \"proof\": [ { \"type\": \"Ed25519Signature2018\", \"created\": \"2020-03-11T23:09:06.803Z\", \"jws\": \"eyJhbGciOiJFZERTQSIsImI2..hS5SPmWTFocjcDg\", \"proofPurpose\": \"assertionMethod\", \"verificationMethod\": \"did:example:c6f1c276e12ec21ebfeb1f712eb#jf893k\" } ] }, \"options\": { \"checks\": [ \"proof\" ] }}"
+      var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+      xmlhttp.open("POST", "http://44ebe9ba9231.ngrok.io/verifier/credentials");
+      xmlhttp.setRequestHeader("Content-Type", "application/json");
+
+      await xmlhttp.send(JSON.stringify(payload));
+      console.log('Verification result:', JSON.stringify(xmlhttp.response, null, 2));
   }
 
   function ready(fn) {
