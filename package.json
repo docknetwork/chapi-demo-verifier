@@ -1,22 +1,22 @@
 {
-  "name": "chapi-demo-verifier",
+  "name": "dock-chapi-demo-verifier",
   "version": "0.0.0",
-  "description": "Credential Handler API Demo verifier",
+  "description": "Credential Handler API Demo Verifier",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbazaar/chapi-demo-verifier.git"
   },
   "author": {
-    "name": "Digital Bazaar, Inc.",
-    "email": "support@digitalbazaar.com",
-    "url": "http://digitalbazaar.com"
+    "name": "Dock",
+    "email": "support@dock.io",
+    "url": "http://dock.io"
   },
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/digitalbazaar/chapi-demo-verifier/issues"
+    "url": "https://github.com/docknetwork/chapi-demo-verifier/issues"
   },
-  "homepage": "https://github.com/digitalbazaar/chapi-demo-verifier",
+  "homepage": "https://github.com/docknetwork/chapi-demo-verifier",
   "dependencies": {
   },
   "devDependencies": {
