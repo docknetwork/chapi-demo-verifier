@@ -12,6 +12,9 @@
 
   <!--Credential Handler API Polyfill-->
   <script src="https://unpkg.com/credential-handler-polyfill@2.1.1/dist/credential-handler-polyfill.min.js"></script>
+
+  <!--VC utils-->
+  <script src="./vc-js.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -98,7 +101,6 @@
       var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
       xmlhttp.open("POST", "http://44ebe9ba9231.ngrok.io/verifier/credentials");
       xmlhttp.setRequestHeader("Content-Type", "application/json");
-
       await xmlhttp.send(JSON.stringify(payload));
       console.log('Verification result:', JSON.stringify(xmlhttp.response, null, 2));
   }
