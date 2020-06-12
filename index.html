@@ -105,7 +105,7 @@
           document.getElementById('verificationResults').innerText = xmlhttp.responseText;
         }
       }
-      xmlhttp.open("POST", "https://44ebe9ba9231.ngrok.io/verifier/credentials");
+      xmlhttp.open("POST", "https://vcapi.dock.io/verifier/credentials");
       xmlhttp.setRequestHeader("Content-Type", "application/json");
       await xmlhttp.send(JSON.stringify(payload));
   }
